@@ -15,7 +15,7 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return view('posts/index')->with(['posts' => $post->getPaginateByLimit(1)]); 
+        return view('posts/index')->with(['posts' => $post->getPaginateByLimit(5)]); 
     }
     
     public function show(Post $post)
@@ -24,4 +24,8 @@ class PostController extends Controller
      //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
     
+    public function create()
+    {
+        return view('posts/create');
+    }
 }
